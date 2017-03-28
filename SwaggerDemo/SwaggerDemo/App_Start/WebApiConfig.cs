@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace SwaggerDemo
 {
@@ -11,14 +10,16 @@ namespace SwaggerDemo
         {
             // Web API configuration and services
 
+            // Remove support for XML payloads
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            // Configure JSON formatter for Enums
+            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+            // Configure JSON formatter for CamelCased properties
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
         }
     }
 }
