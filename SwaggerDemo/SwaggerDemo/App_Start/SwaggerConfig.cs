@@ -33,7 +33,10 @@ namespace SwaggerDemo
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "SwaggerDemo");
+                        c.SingleApiVersion("v1", "Ryan's Sports League Swagger Demo")
+                            .Description("Manage all your leagues")
+                            .Contact(cc => cc.Email("ryan@olo.com"))
+                            .TermsOfService("Not responsible for anything");
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
