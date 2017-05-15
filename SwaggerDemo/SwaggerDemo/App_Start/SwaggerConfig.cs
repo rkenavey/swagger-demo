@@ -189,6 +189,7 @@ namespace SwaggerDemo
                         // "Logical Name" is passed to the method as shown below.
                         //
                         //c.InjectStylesheet(containingAssembly, "Swashbuckle.Dummy.SwaggerExtensions.testStyles1.css");
+                        c.InjectStylesheet(thisAssembly, "SwaggerDemo.CustomContent.SwaggerOlo.css");
 
                         // Use the "InjectJavaScript" option to invoke one or more custom JavaScripts after the swagger-ui
                         // has loaded. The file must be included in your project as an "Embedded Resource", and then the resource's

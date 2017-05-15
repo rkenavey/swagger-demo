@@ -1,0 +1,8 @@
+﻿/* swagger ui customization */
+body.swagger-section #header {
+    background-color: lightskyblue;
+}
+
+.logo__img {
+    content: url(/CustomContent/sports.png);
+}
