@@ -16,5 +16,6 @@ namespace SwaggerDemo.Models
         public IEnumerable<string> PhoneNumbers { get; set; }
         public Address Address { get; set; }
         public DateTime? Dob { get; set; }
+        public TimeSpan Age { get; set; }
     }
 }

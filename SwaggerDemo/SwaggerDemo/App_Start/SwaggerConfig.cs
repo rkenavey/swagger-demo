@@ -1,8 +1,10 @@
+using System;
 using System.IO;
 using System.Web;
 using System.Web.Http;
 using SwaggerDemo;
 using Swashbuckle.Application;
+using Swashbuckle.Swagger;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -115,6 +117,7 @@ namespace SwaggerDemo
                         // complex Schema, use a Schema filter.
                         //
                         //c.MapType<ProductType>(() => new Schema { type = "integer", format = "int32" });
+                        c.MapType<TimeSpan>(() => new Schema { type = "string", format = "time-span" });
 
                         // If you want to post-modify "complex" Schemas once they've been generated, across the board or for a
                         // specific type, you can wire up one or more Schema filters.
