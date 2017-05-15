@@ -3,6 +3,7 @@ using System.IO;
 using System.Web;
 using System.Web.Http;
 using SwaggerDemo;
+using SwaggerDemo.Filters;
 using Swashbuckle.Application;
 using Swashbuckle.Swagger;
 
@@ -123,6 +124,7 @@ namespace SwaggerDemo
                         // specific type, you can wire up one or more Schema filters.
                         //
                         //c.SchemaFilter<ApplySchemaVendorExtensions>();
+                        c.SchemaFilter<RequiredSchemaFilter>();
 
                         // In a Swagger 2.0 document, complex types are typically declared globally and referenced by unique
                         // Schema Id. By default, Swashbuckle does NOT use the full type name in Schema Ids. In most cases, this
